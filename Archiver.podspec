@@ -7,6 +7,6 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/jdp-global/Archiver'
   s.authors  = { 'Mike Mayo' => 'mike@overhrd.com'  }
   s.source   = { :git => 'https://github.com/jdp-global/Archiver.git', :commit => 'd40fb9dad4cc5d05ceec118788c4c2fdfeb83a5e' }
-  s.source_files = ''
+  s.source_files = '*.{h,m}'
 end
 
