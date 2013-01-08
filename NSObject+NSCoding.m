@@ -45,10 +45,10 @@
 - (void)autoEncodeWithCoder:(NSCoder *)coder {
     NSDictionary *properties = [self properties];
     if (![[properties allKeys] count]) {
-        DLog(@"WARNING: no properties detected");
+        NSLog(@"WARNING: no properties detected");
     }
     for (NSString *key in properties) {
-        DLog(@"key:%@",key);
+        NSLog(@"key:%@",key);
         NSString *type = [properties objectForKey:key];
         id value;
         unsigned long long ullValue;
@@ -71,7 +71,7 @@
             case '@':   // object
                 if ([[type componentsSeparatedByString:@"\""] count] > 1) {
                     className = [[type componentsSeparatedByString:@"\""] objectAtIndex:1];
-                    DLog(@"className:%@",className);
+                    NSLog(@"className:%@",className);
                     Class class = NSClassFromString(className);
                     value = [self performSelector:NSSelectorFromString(key)];
 					
@@ -127,7 +127,7 @@
                 [coder encodeObject:[NSNumber numberWithUnsignedInt:unsignedValue] forKey:key];
                 break;
             default:
-                DLog(@"WARNING: couldn't autoEncodeWithCoder %@",key);
+                NSLog(@"WARNING: couldn't autoEncodeWithCoder %@",key);
                 break;
         }        
     }
@@ -136,10 +136,10 @@
 - (void)autoDecode:(NSCoder *)coder {
     NSDictionary *properties = [self properties];
     if (![[properties allKeys] count]) {
-        DLog(@"WARNING: no properties detected");
+        NSLog(@"WARNING: no properties detected");
     }
     for (NSString *key in properties) {
-        DLog(@"key:%@",key);
+        NSLog(@"key:%@",key);
         NSString *type = [properties objectForKey:key];
         id value;
         NSNumber *number;
@@ -229,7 +229,7 @@
                 break;
 				
             default:
-                DLog(@"WARNING: couldn't decodeObjectForKey %@",key);
+                NSLog(@"WARNING: couldn't decodeObjectForKey %@",key);
                 break;
         }
     }
