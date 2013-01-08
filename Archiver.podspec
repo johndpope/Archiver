@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.summary  = 'These are some simple classes to make object persistence with NSCoding easier.'
   s.homepage = 'https://github.com/jdp-global/Archiver'
   s.authors  = { 'Mike Mayo' => 'mike@overhrd.com'  }
-  s.source   = { :git => 'https://github.com/jdp-global/Archiver.git', :commmit => 'd40fb9dad4cc5d05ceec118788c4c2fdfeb83a5e' }
+  s.source   = { :git => 'https://github.com/jdp-global/Archiver.git', :commit => 'd40fb9dad4cc5d05ceec118788c4c2fdfeb83a5e' }
   s.source_files = ''
 end
 
